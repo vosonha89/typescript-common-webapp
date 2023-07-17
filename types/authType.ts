@@ -4,6 +4,7 @@ export interface AuthObject {
     accessToken: string;
     refreshToken: string;
     expiresIn: number;
+    expiresUTCTime: string;
 }
 
 export interface AuthProfileObject extends AuthObject {

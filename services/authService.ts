@@ -48,6 +48,7 @@ export class AuthService {
             const now = new Date();
             now.setTime(now.getTime() + (response.expiresIn * 1000));
             const expires = 'expires=' + now.toUTCString();
+            value.expiresUTCTime = now.toUTCString();
             document.cookie = StorageKey.authObject + '=' + JSON.stringify(value) + ';' + expires + ';path=/;SameSite=Lax';
             // save local storage for refreshToken
             value.avatar = response.avatar || ConstantValue.avatar;
